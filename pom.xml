@@ -1,80 +1,84 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.5.1</version>
-		<relativePath/> <!-- lookup parent from repository -->
-	</parent>
-	<groupId>etu.spb.etu</groupId>
-	<artifactId>app</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
-	<name>app</name>
-	<description>Demo project for Spring Boot</description>
-	<url/>
-	<licenses>
-		<license/>
-	</licenses>
-	<developers>
-		<developer/>
-	</developers>
-	<scm>
-		<connection/>
-		<developerConnection/>
-		<tag/>
-		<url/>
-	</scm>
-	<properties>
-		<java.version>1.8</java.version>
-	</properties>
-	<dependencies>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
-		</dependency>
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>2.5.1</version>
+    <relativePath/> <!-- lookup parent from repository -->
+  </parent>
+  <groupId>etu.spb.etu</groupId>
+  <artifactId>app</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>app</name>
+  <description>Demo project for Spring Boot</description>
+  <url/>
+  <licenses>
+    <license/>
+  </licenses>
+  <developers>
+    <developer/>
+  </developers>
+  <scm>
+    <connection/>
+    <developerConnection/>
+    <tag/>
+    <url/>
+  </scm>
+  <properties>
+    <java.version>1.8</java.version>
+  </properties>
+  <dependencies>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
 
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-		</dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-test</artifactId>
+      <scope>test</scope>
+    </dependency>
 
-	</dependencies>
+  </dependencies>
 
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-			<plugin>
-				<groupId>org.vafer</groupId>
-				<artifactId>jdeb</artifactId>
-				<version>1.8</version>
-				<configuration>
-					<deb>
-						<name>my-spring-app</name>
-						<version>1.0-1</version>
-						<maintainer>wisardus &lt;maximus906544@yandex.ru&gt;</maintainer>
-						<description>This is my Spring application.</description>
-						<architecture>all</architecture>
-						<section>utils</section>
-					</deb>
-					<files>
-						<file>
-							<source>${project.build.directory}/${project.artifactId}-${project.version}.jar</source>
-							<destination>/opt/my-spring-app/my-spring-app.jar</destination>
-						</file>
-					</files>
-					<scripts>
-						<postinst>src/main/scripts/postinst.sh</postinst>
-						<prerm>src/main/scripts/prerm.sh</prerm>
-					</scripts>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <groupId>org.vafer</groupId>
+        <artifactId>jdeb</artifactId>
+        <version>1.8</version>
+        <configuration>
+          <name>my-spring-app</name>
+          <version>1.0-1</version>
+          <maintainer>wisardus &lt;maximus906544@yandex.ru&gt;</maintainer>
+          <description>This is my Spring application.</description>
+          <architecture>all</architecture>
+          <section>utils</section>
+
+	  <control>src/main/deb/control</control>
+
+          <files>
+            <file>
+              <source>${project.build.directory}/${project.artifactId}-${project.version}.jar</source>
+              <destination>/opt/my-spring-app/my-spring-app.jar</destination>
+            </file>
+          </files>
+
+          <scripts>
+            <postinst>src/main/scripts/postinst.sh</postinst>
+            <prerm>src/main/scripts/prerm.sh</prerm>
+          </scripts>
+
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
 
 </project>
+

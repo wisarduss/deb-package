@@ -40,6 +40,7 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
 	</dependencies>
 
 	<build>
@@ -47,6 +48,31 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.vafer</groupId>
+				<artifactId>jdeb</artifactId>
+				<version>1.8</version>
+				<configuration>
+					<deb>
+						<name>my-spring-app</name>
+						<version>1.0-1</version>
+						<maintainer>wisardus &lt;maximus906544@yandex.ru&gt;</maintainer>
+						<description>This is my Spring application.</description>
+						<architecture>all</architecture>
+						<section>utils</section>
+					</deb>
+					<files>
+						<file>
+							<source>${project.build.directory}/${project.artifactId}-${project.version}.jar</source>
+							<destination>/opt/my-spring-app/my-spring-app.jar</destination>
+						</file>
+					</files>
+					<scripts>
+						<postinst>src/main/scripts/postinst.sh</postinst>
+						<prerm>src/main/scripts/prerm.sh</prerm>
+					</scripts>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>

@@ -1,8 +1,0 @@
-   #!/bin/bash
-   set -e
-
-   # Команда для запуска вашего приложения
-   systemctl start app.service
-
-   exit 0
-   

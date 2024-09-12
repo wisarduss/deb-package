@@ -1,4 +1,4 @@
-Package: app
+Package: my-spring-app
 Version: 1.0-1
 Section: utils
 Priority: optional

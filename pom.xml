@@ -73,7 +73,7 @@
             <type>directory</type>
             <mapper>
               <type>perm</type>
-              <prefix>/opt/${company.name}/${project.artifactId}/${project.version}/bin</prefix>
+              <prefix>/opt/${nic}/${project.artifactId}/${project.version}/bin</prefix>
               <user>root</user>
               <group>root</group>
               <filemode>755</filemode>
@@ -85,7 +85,7 @@
             <type>directory</type>
             <mapper>
               <type>perm</type>
-              <prefix>/opt/${company.name}/${project.artifactId}/${project.version}</prefix>
+              <prefix>/opt/${nic}/${project.artifactId}/${project.version}</prefix>
               <user>root</user>
               <group>root</group>
               <filemode>644</filemode>
@@ -94,7 +94,7 @@
           <data>
             <type>template</type>
             <paths>
-            <path>/opt/${company.name}/${project.artifactId}/${project.version}/conf</path>
+            <path>/opt/${nic}/${project.artifactId}/${project.version}/conf</path>
             <path>etc/${project.artifactId}</path>
             <path>var/lib/${project.artifactId}</path>
             <path>var/log/${project.artifactId}</path>
@@ -108,8 +108,8 @@
           </data>
           <data>
             <type>link</type>
-            <linkName>/opt/${company.name}/${project.artifactId}/current</linkName>
-            <linkTarget>/opt/${company.name}/${project.artifactId}/${project.version}</linkTarget>
+            <linkName>/opt/${nic}/${project.artifactId}/current</linkName>
+            <linkTarget>/opt/${nic}/${project.artifactId}/${project.version}</linkTarget>
             <symlink>true</symlink>
           </data>
           <data>

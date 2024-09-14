@@ -44,13 +44,6 @@
 
 
   <build>
-    <extensions>
-      <extension>
-        <groupId>org.vafer</groupId>
-        <artifactId>jdeb</artifactId>
-        <version>1.9</version>
-      </extension>
-    </extensions>
     <pluginManagement>
       <plugins>
         <plugin>
@@ -62,16 +55,16 @@
           <artifactId>jdeb</artifactId>
           <version>1.9</version>
           <configuration>
-            <deb>${project.basedir}/target/debtest_${project.version}.deb</deb>
+            <deb>${project.basedir}/target/app_${project.version}.deb</deb>
             <type>deb</type>
             <controlDir>${project.basedir}/src/deb/control</controlDir>
             <dataSet>
               <data>
-                <src>${project.basedir}/../debtest/target/debtest-${project.version}.jar</src>
+                <src>${project.basedir}/../deb-package/target/app-${project.version}.jar</src>
                 <type>file</type>
                 <mapper>
                   <type>perm</type>
-                  <prefix>/opt/debtest</prefix>
+                  <prefix>/opt/app</prefix>
                 </mapper>
               </data>
             </dataSet>

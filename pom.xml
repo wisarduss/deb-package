@@ -44,14 +44,13 @@
 
 
   <build>
-    <pluginManagement>
-      <plugins>
-        <plugin>
-          <groupId>org.springframework.boot</groupId>
-          <artifactId>spring-boot-maven-plugin</artifactId>
-        </plugin>
-        <plugin>
-          <groupId>org.vafer</groupId>
+    <plugins>
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+      </plugin>
+      <plugin>
+	<groupId>org.vafer</groupId>
           <artifactId>jdeb</artifactId>
           <version>1.9</version>
           <configuration>
@@ -69,9 +68,8 @@
               </data>
             </dataSet>
           </configuration>
-        </plugin>
-      </plugins>
-    </pluginManagement>
+      </plugin>
+    </plugins>
   </build>
 
 </project>

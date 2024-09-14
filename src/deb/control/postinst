@@ -1,11 +1,11 @@
 #!/bin/bash
 
 # Проверяем, что файл JAR существует
-if [ ! -f "$HOME/Рабочий\ стол/dev/deb-package/target/app-0.0.1-SNAPSHOT.jar" ]; then
+if [ ! -f "./opt/app/app-0.0.1-SNAPSHOT.jar" ]; then
     echo "Файл JAR не найден!"
     exit 1
 fi
 
 # Запускаем приложение
-java -jar "$HOME/Рабочий\ стол/dev/deb-package/target/app-0.0.1-SNAPSHOT.jar"
+java -jar "./opt/app/app-0.0.1-SNAPSHOT.jar"
 echo "Spring boot app started"

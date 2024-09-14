@@ -1,7 +1,0 @@
-Package: app
-Version: 1.0-1
-Section: utils
-Priority: optional
-Architecture: all
-Maintainer: wisardus <maximus906544@yandex.ru>
-Description: This is my Spring application.
